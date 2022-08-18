@@ -2858,7 +2858,6 @@ input:checked + .toggleSwitchSlider:before {
     height: 70px;
     width: auto;
     position: relative;
-    border: 2px solid white;
     box-sizing: border-box;
     border-radius: 50%;
 }
@@ -2871,6 +2870,22 @@ input:checked + .toggleSwitchSlider:before {
     border-radius: 50%;
     margin-top: 50px;
 }
+
+#image_nightmc_container {
+    position: relative;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    margin-top: 50px;
+}
+
+#image_nightmc {
+    position: relative;
+    width: auto;
+    border-radius: 50%;
+    margin-top: 50px;
+}
+
 
 /* Logo container styles w/ update. */
 #image_seal_container[update]{
