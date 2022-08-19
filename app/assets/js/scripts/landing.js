@@ -377,7 +377,7 @@ function asyncSystemScan(mcVersion, launchAfter = true){
             if(m.result === true){
 
                 // Oracle JRE enqueued successfully, begin download.
-                setLaunchDetails('Downloading Java..')
+                setLaunchDetails('Téléchargement de Java..')
                 sysAEx.send({task: 'execute', function: 'processDlQueues', argsArr: [[{id:'java', limit:1}]]})
 
             } else {
@@ -559,7 +559,7 @@ function dlAsync(login = true){
                 case 'files':
                     setLaunchPercentage(100, 100)
                     loggerLaunchSuite.log('File validation complete.')
-                    setLaunchDetails('Downloading files..')
+                    setLaunchDetails('Téléchargements des mods..')
                     break
             }
         } else if(m.context === 'progress'){
@@ -601,7 +601,7 @@ function dlAsync(login = true){
                         progressListener = null
                     }
 
-                    setLaunchDetails('Preparing to launch..')
+                    setLaunchDetails('Préparation du lancement..')
                     break
             }
         } else if(m.context === 'error'){
@@ -656,7 +656,7 @@ function dlAsync(login = true){
                 const onLoadComplete = () => {
                     toggleLaunchArea(false)
                     if(hasRPC){
-                        DiscordWrapper.updateDetails('Loading game..')
+                        DiscordWrapper.updateDetails('Chargement du jeu..')
                     }
                     proc.stdout.on('data', gameStateChange)
                     proc.stdout.removeListener('data', tempListener)
@@ -683,9 +683,9 @@ function dlAsync(login = true){
                 const gameStateChange = function(data){
                     data = data.trim()
                     if(SERVER_JOINED_REGEX.test(data)){
-                        DiscordWrapper.updateDetails('Exploring the Realm!')
+                        DiscordWrapper.updateDetails('Explorer le royaume!')
                     } else if(GAME_JOINED_REGEX.test(data)){
-                        DiscordWrapper.updateDetails('Sailing to Westeros!')
+                        DiscordWrapper.updateDetails('Direction vers NightMC!')
                     }
                 }
 
@@ -705,7 +705,7 @@ function dlAsync(login = true){
                     proc.stdout.on('data', tempListener)
                     proc.stderr.on('data', gameErrorListener)
 
-                    setLaunchDetails('Done. Enjoy the server!')
+                    setLaunchDetails('Terminé. Lancement du jeu!')
 
                     // Init Discord Hook
                     const distro = DistroManager.getDistribution()
